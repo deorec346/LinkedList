@@ -61,7 +61,7 @@ namespace LinkedList
             Console.WriteLine("-----------------------------------------------");
             Console.WriteLine("Data In Linked List");
             linkedList.Display();
-*/
+
             Console.ReadLine();
         }
     }
