@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    namespace LinkedList
-    {
         class LinkedList
         {
             //Instance
@@ -49,5 +47,4 @@ namespace LinkedList
                 }
             }
         }
-    }
 }
