@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    namespace LinkedList
+    class LinkedList
     {
-        class LinkedList
-        {
             //Instance
             internal Node head;
 
@@ -35,5 +33,6 @@ namespace LinkedList
                 //Display LinkedList Data
                 Console.WriteLine("{0} inserted into the Linked List", node.data);
             }
-        }
-    }
+     }
+
+}
