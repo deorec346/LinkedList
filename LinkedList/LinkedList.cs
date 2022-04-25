@@ -6,143 +6,34 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    class LinkedList
+    namespace LinkedList
     {
-        //Instance
-        internal Node head;
-
-        //Appending Data to LinkedList
-        internal void Add(int data)
+        class LinkedList
         {
-            //Object of Node
-            Node node = new Node(data);
+            //Instance
+            internal Node head;
 
-            //Add Data
-            if (this.head == null)
-                this.head = node;
-            else
+            //Adding Data to LinkedList
+            internal void Add(int data)
             {
-                Node temp = head;
-                while (temp.next != null)
+                //Object of Node
+                Node node = new Node(data);
+
+                //Add Data
+                if (this.head == null)
+                    this.head = node;
+                else
                 {
-                    temp = temp.next;
+                    Node temp = head;
+                    while (temp.next != null)
+                    {
+                        temp = temp.next;
+                    }
+                    temp.next = node;
                 }
-                temp.next = node;
-            }
-        }
-        //Adding Data In Particular Position
-        public void InsertAtParticularPosition(int position, int data)
-        {
-            Node node = new Node(data);
-            if (position < 1)
-                Console.WriteLine("Invalid Position");
-            else if (position == 1)
-            {
-                node.next = head;
-                head = node;
-            }
-            else
-            {
-                Node temp = head;
 
-                while (position > 2)
-                {
-                    temp = temp.next;
-                    position--;
-                }
-                node.next = temp.next;
-                temp.next = node;
-            }
-        }
-
-        //Delete First element 
-        internal Node PopFirstElement()
-        {
-            if (this.head == null)
-                return null;
-            this.head = this.head.next;
-            return this.head;
-        }
-
-        //Delete Last Element
-        internal Node PopLastElement()
-        {
-            if (head == null)
-                return null;
-            if (head.next == null)
-                return null;
-            Node newNode = head;
-            while (newNode.next.next != null)
-            {
-                newNode = newNode.next;
-            }
-            newNode.next = null;
-            return head;
-        }
-
-        //Search an Element
-        public bool SearchElement(int value)
-        {
-            int index = 0;
-            Node temp = head;
-            while (temp != null)
-            {
-                index++;
-                if (temp.data.Equals(value))
-                {
-                    Console.WriteLine(value + " is Found At Index = " + index);
-                    return true;
-                }
-                temp = temp.next;
-            }
-            return false;
-        }
-        //Delete elements from LinkedList 
-        public void Delete(int data)
-        {
-            Node temp = head, previous = null;
-            if (temp != null && temp.data == data)
-            {
-                head = temp.next;
-                return;
-            }
-            while (temp != null && temp.data != data)
-            {
-                previous = temp;
-                temp = temp.next;
-            }
-            if (temp == null)
-                return;
-            previous.next = temp.next;
-        }
-        //Get Size of Linked List
-        public int Size()
-        {
-            int size = 0;
-            Node temp = head;
-            while (temp != null)
-            {
-                size++;
-                temp = temp.next;
-            }
-            return size;
-        }
-
-        //Display LinkedList Data through Method
-        internal void Display()
-        {
-            //Head is Null then List is empty otherwise print All data of Linked List
-            if (this.head == null)
-                Console.WriteLine("The list is empty.");
-            else
-            {
-                Node temp = head;
-                while (temp != null)
-                {
-                    Console.WriteLine("Data : " + temp.data);
-                    temp = temp.next;
-                }
+                //Display LinkedList Data
+                Console.WriteLine("{0} inserted into the Linked List", node.data);
             }
         }
     }
-}
